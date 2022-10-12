@@ -47,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLayer\GestioSQL.cs" />
-    <Compile Include="PresentationLayer\Autentificacion_Usuario.cs">
+    <Compile Include="PresentationLayer\Autentificacion_Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\Autentificacion_Usuario.Designer.cs">
-      <DependentUpon>Autentificacion_Usuario.cs</DependentUpon>
+    <Compile Include="PresentationLayer\Autentificacion_Empresas.Designer.cs">
+      <DependentUpon>Autentificacion_Empresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Autentificacion_Candidatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Autentificacion_Candidatos.Designer.cs">
+      <DependentUpon>Autentificacion_Candidatos.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\FormularioPrincipal.cs">
       <SubType>Form</SubType>
@@ -67,8 +73,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PresentationLayer\Autentificacion_Usuario.resx">
-      <DependentUpon>Autentificacion_Usuario.cs</DependentUpon>
+    <EmbeddedResource Include="PresentationLayer\Autentificacion_Empresas.resx">
+      <DependentUpon>Autentificacion_Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Autentificacion_Candidatos.resx">
+      <DependentUpon>Autentificacion_Candidatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

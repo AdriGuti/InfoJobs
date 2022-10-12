@@ -6,17 +6,18 @@ using System.Windows.Forms;
 
 namespace InfoJobs
 {
-    static class Program
+    static public class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
-        static void Main()
+        static public void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioPrincipal());
+            Login login;
+            Application.Run(login=new Login());
         }
     }
 }
