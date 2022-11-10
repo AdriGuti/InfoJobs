@@ -45,6 +45,7 @@ namespace InfoJobs.PresentationLayer
             this.BotonLogin.TabIndex = 9;
             this.BotonLogin.Text = "Login";
             this.BotonLogin.UseVisualStyleBackColor = true;
+            this.BotonLogin.Click += new System.EventHandler(this.BotonLogin_Click);
             // 
             // label2
             // 

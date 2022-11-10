@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InfoJobs.BussinessLayer;
 
 namespace InfoJobs
 {
@@ -19,7 +20,16 @@ namespace InfoJobs
 
         private void BotonLogin_Click(object sender, EventArgs e)
         {
-
+            if (GestioSQL.LoginCandidatos())
+            {
+                this.Hide();
+                FormularioPrincipal principal = new FormularioPrincipal();
+                principal.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña erroneo");
+            }
         }
 
         private void BotonRetroceder_Click(object sender, EventArgs e)

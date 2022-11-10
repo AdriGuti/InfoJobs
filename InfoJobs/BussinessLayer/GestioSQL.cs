@@ -8,7 +8,12 @@ namespace InfoJobs.BussinessLayer
 {
     static public class GestioSQL
     {
-        static public bool Login()
+        static public bool LoginCandidatos()
+        {
+            bool loginsuccesful = false;
+            return loginsuccesful;
+        }
+        static public bool LoginEmpresas()
         {
             bool loginsuccesful = false;
 

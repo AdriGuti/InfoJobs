@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InfoJobs.BussinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,20 @@ namespace InfoJobs.PresentationLayer
         private void Autentificacion_Empresas_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BotonLogin_Click(object sender, EventArgs e)
+        {
+            if (GestioSQL.LoginEmpresas())
+            {
+                this.Hide();
+                FormularioPrincipal principal = new FormularioPrincipal();
+                principal.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña erroneo");
+            }
         }
     }
 }
