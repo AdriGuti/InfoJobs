@@ -20,7 +20,7 @@ namespace InfoJobs
 
         private void BotonLogin_Click(object sender, EventArgs e)
         {
-            if (GestioSQL.LoginCandidatos())
+            if (GestioSQL.LoginCandidatos(CuadroTextoUsuario.Text,CuadroTextoContraseña.Text))
             {
                 this.Hide();
                 FormularioPrincipal principal = new FormularioPrincipal();
@@ -28,7 +28,7 @@ namespace InfoJobs
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña erroneo");
+                MessageBox.Show(GestioSQL.ErrorMessage);
             }
         }
 
