@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InfoJobs.BussinessLayer;
 
 namespace InfoJobs.PresentationLayer
 {
@@ -15,6 +16,11 @@ namespace InfoJobs.PresentationLayer
         public FormularioPrincipalEmpresas()
         {
             InitializeComponent();
+        }
+
+        private void FormularioPrincipalEmpresas_Load(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = GestioSQL.DataBindingOficio();
         }
     }
 }
