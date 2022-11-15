@@ -136,6 +136,7 @@ namespace InfoJobs.PresentationLayer
             this.Controls.Add(this.tabControl1);
             this.Name = "FormularioPrincipalEmpresas";
             this.Text = "FormularioPrincipalEmpresas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormularioPrincipalEmpresas_FormClosed);
             this.Load += new System.EventHandler(this.FormularioPrincipalEmpresas_Load);
             this.tabControl1.ResumeLayout(false);
             this.TabCrearOfertas.ResumeLayout(false);

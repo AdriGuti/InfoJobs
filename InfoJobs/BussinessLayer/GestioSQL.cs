@@ -46,18 +46,25 @@ namespace InfoJobs.BussinessLayer
             }
             return loginsuccesful;
         }
-        public static List<Oficio> DataBindingOficio()
+        public static List<string> DataBindingOficio()
         {
             List<Oficio> oficis = new List<Oficio>();
+            List<string> nomOficis = new List<string>();
             try
             {
                 connexio = new infojobsContext();
                 oficis = connexio.Oficio.ToList();
-            }catch(Exception ex)
+
+                foreach (Oficio ofici in oficis)
+                {
+                    nomOficis.Add(ofici.Nombre);
+                }
+            }
+            catch(Exception ex)
             {
                 ErrorMessage = ex.Message;
             }
-            return oficis;
+            return nomOficis;
         }
     }
 }

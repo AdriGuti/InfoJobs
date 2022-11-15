@@ -39,7 +39,7 @@ namespace InfoJobs.PresentationLayer
                 principal.Show();
             }
             else
-            {
+                {
                 MessageBox.Show("Usuario o contraseña erroneo");
             }
         }

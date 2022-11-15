@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InfoJobs.PresentationLayer;
 
 namespace InfoJobs
 {
@@ -17,7 +18,7 @@ namespace InfoJobs
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Login login;
-            Application.Run(login=new Login());
+            Application.Run(new FormularioPrincipalEmpresas());
         }
     }
 }
