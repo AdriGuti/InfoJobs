@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InfoJobs
 {
-    public partial class FormularioPrincipal : Form
+    public partial class FormularioPrincipalCandidatos : Form
     {
-        public FormularioPrincipal()
+        public FormularioPrincipalCandidatos()
         {
             InitializeComponent();
         }

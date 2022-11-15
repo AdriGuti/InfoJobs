@@ -32,10 +32,10 @@ namespace InfoJobs.PresentationLayer
 
         private void BotonLogin_Click(object sender, EventArgs e)
         {
-            if (GestioSQL.LoginEmpresas())
+            if (GestioSQL.LoginEmpresas(CuadroTextoUsuario.Text,CuadroTextoContraseña.Text))
             {
                 this.Hide();
-                FormularioPrincipal principal = new FormularioPrincipal();
+                FormularioPrincipalEmpresas principal = new FormularioPrincipalEmpresas();
                 principal.Show();
             }
             else

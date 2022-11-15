@@ -1,7 +1,7 @@
 ﻿
 namespace InfoJobs
 {
-    partial class FormularioPrincipal
+    partial class FormularioPrincipalCandidatos
     {
         /// <summary>
         /// Variable del diseñador necesaria.

@@ -23,7 +23,7 @@ namespace InfoJobs
             if (GestioSQL.LoginCandidatos(CuadroTextoUsuario.Text,CuadroTextoContraseña.Text))
             {
                 this.Hide();
-                FormularioPrincipal principal = new FormularioPrincipal();
+                FormularioPrincipalCandidatos principal = new FormularioPrincipalCandidatos();
                 principal.Show();
             }
             else

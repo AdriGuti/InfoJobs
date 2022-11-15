@@ -11,15 +11,14 @@ namespace InfoJobs.BussinessLayer
     {
         static infojobsContext connexio;
         public static string ErrorMessage = "";
-        static public bool LoginCandidatos(string nom,string pass)
+        static public bool LoginCandidatos(string dni,string pass)
         {
             bool loginsuccesful=false;
-            connexio = new infojobsContext();
             try
             {
-
                 connexio = new infojobsContext();
-                if (connexio.Candidatos.Where(a => a.Nombre == nom && a.Contraseña == pass).Count() == 1)
+                int valor = connexio.Candidatos.Where(a => a.Dni == dni && a.Contraseña == pass).Count();
+                if ( valor == 1)
                 {
                     loginsuccesful = true;
                 }
@@ -29,10 +28,22 @@ namespace InfoJobs.BussinessLayer
             }
             return loginsuccesful;
         }
-        static public bool LoginEmpresas()
+        static public bool LoginEmpresas(string nif, string pass)
         {
             bool loginsuccesful = false;
-
+            try
+            {
+                connexio = new infojobsContext();
+                int valor = connexio.Empresas.Where(a => a.Nif == nif && a.Contraseña == pass).Count();
+                if (valor == 1)
+                {
+                    loginsuccesful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
             return loginsuccesful;
         }
     }
