@@ -15,6 +15,7 @@ namespace InfoJobs.DataLayer
         }
 
         public int IdOferta { get; set; }
+        public string Titulo { get; set; }
         public string NifEmpresa { get; set; }
         public int IdOficio { get; set; }
         public string Descripcion { get; set; }

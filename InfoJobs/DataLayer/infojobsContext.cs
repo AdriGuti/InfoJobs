@@ -157,6 +157,12 @@ namespace InfoJobs.DataLayer
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
+                entity.Property(e => e.Titulo)
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
                 entity.HasOne(d => d.IdOficioNavigation)
                     .WithMany(p => p.Ofertas)
                     .HasForeignKey(d => d.IdOficio)

@@ -66,5 +66,25 @@ namespace InfoJobs.BussinessLayer
             }
             return nomOficis;
         }
+        public static bool PublicarOferta(string titol, string descripcio, string ofici,string nifEmpresa)
+        {
+            bool ofertaPublicada = false;
+            try
+            {
+                connexio = new infojobsContext();
+                Ofertas novaOferta = new Ofertas();
+                novaOferta.Titulo = titol;
+                novaOferta.Descripcion = descripcio;
+                novaOferta.IdOficio = connexio.Oficio.Where(a => a.Nombre == ofici).First<Oficio>().IdOficio;
+                novaOferta.NifEmpresa = nifEmpresa;
+                connexio.Ofertas.Add(novaOferta);
+                connexio.SaveChanges();
+                ofertaPublicada = true;
+            }catch(Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+            return ofertaPublicada;
+        }
     }
 }

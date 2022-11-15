@@ -31,13 +31,14 @@ namespace InfoJobs.PresentationLayer
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabCrearOfertas = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboBoxOfici = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CuadroTextoDescripcion = new System.Windows.Forms.RichTextBox();
             this.CuadroTextoTitulo = new System.Windows.Forms.TextBox();
             this.TabVerOfertas = new System.Windows.Forms.TabPage();
+            this.BotoPublicarOferta = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TabCrearOfertas.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,8 @@ namespace InfoJobs.PresentationLayer
             // 
             // TabCrearOfertas
             // 
-            this.TabCrearOfertas.Controls.Add(this.comboBox1);
+            this.TabCrearOfertas.Controls.Add(this.BotoPublicarOferta);
+            this.TabCrearOfertas.Controls.Add(this.ComboBoxOfici);
             this.TabCrearOfertas.Controls.Add(this.label1);
             this.TabCrearOfertas.Controls.Add(this.label3);
             this.TabCrearOfertas.Controls.Add(this.label2);
@@ -68,13 +70,13 @@ namespace InfoJobs.PresentationLayer
             this.TabCrearOfertas.Text = "CrearOfertas";
             this.TabCrearOfertas.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // ComboBoxOfici
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(324, 278);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 28);
-            this.comboBox1.TabIndex = 6;
+            this.ComboBoxOfici.FormattingEnabled = true;
+            this.ComboBoxOfici.Location = new System.Drawing.Point(324, 278);
+            this.ComboBoxOfici.Name = "ComboBoxOfici";
+            this.ComboBoxOfici.Size = new System.Drawing.Size(227, 28);
+            this.ComboBoxOfici.TabIndex = 6;
             // 
             // label1
             // 
@@ -128,6 +130,16 @@ namespace InfoJobs.PresentationLayer
             this.TabVerOfertas.Text = "VerOfertasPublicadas";
             this.TabVerOfertas.UseVisualStyleBackColor = true;
             // 
+            // BotoPublicarOferta
+            // 
+            this.BotoPublicarOferta.Location = new System.Drawing.Point(324, 342);
+            this.BotoPublicarOferta.Name = "BotoPublicarOferta";
+            this.BotoPublicarOferta.Size = new System.Drawing.Size(75, 31);
+            this.BotoPublicarOferta.TabIndex = 7;
+            this.BotoPublicarOferta.Text = "Publicar";
+            this.BotoPublicarOferta.UseVisualStyleBackColor = true;
+            this.BotoPublicarOferta.Click += new System.EventHandler(this.BotoPublicarOferta_Click);
+            // 
             // FormularioPrincipalEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -150,11 +162,12 @@ namespace InfoJobs.PresentationLayer
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TabCrearOfertas;
         private System.Windows.Forms.TabPage TabVerOfertas;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboBoxOfici;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox CuadroTextoDescripcion;
         private System.Windows.Forms.TextBox CuadroTextoTitulo;
+        private System.Windows.Forms.Button BotoPublicarOferta;
     }
 }

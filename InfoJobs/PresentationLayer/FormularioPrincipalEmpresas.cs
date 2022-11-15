@@ -14,6 +14,7 @@ namespace InfoJobs.PresentationLayer
 {
     public partial class FormularioPrincipalEmpresas : Form
     {
+        public string Empresa;
         public FormularioPrincipalEmpresas()
         {
             InitializeComponent();
@@ -21,12 +22,25 @@ namespace InfoJobs.PresentationLayer
 
         private void FormularioPrincipalEmpresas_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = GestioSQL.DataBindingOficio();
+            ComboBoxOfici.DataSource = GestioSQL.DataBindingOficio();
         }
 
         private void FormularioPrincipalEmpresas_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BotoPublicarOferta_Click(object sender, EventArgs e)
+        {
+            if (GestioSQL.PublicarOferta(CuadroTextoTitulo.Text, CuadroTextoDescripcion.Text, ComboBoxOfici.Text, Empresa)){
+                MessageBox.Show("Oferta publicada correctament");
+                CuadroTextoTitulo.Text = "";
+                CuadroTextoDescripcion.Text = "";
+            }
+            else
+            {
+                MessageBox.Show(GestioSQL.ErrorMessage);
+            }
         }
     }
 }

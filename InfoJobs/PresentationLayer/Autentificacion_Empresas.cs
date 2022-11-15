@@ -36,6 +36,7 @@ namespace InfoJobs.PresentationLayer
             {
                 this.Hide();
                 FormularioPrincipalEmpresas principal = new FormularioPrincipalEmpresas();
+                principal.Empresa = CuadroTextoUsuario.Text;
                 principal.Show();
             }
             else

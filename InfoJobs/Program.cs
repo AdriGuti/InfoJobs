@@ -18,7 +18,7 @@ namespace InfoJobs
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Login login;
-            Application.Run(new FormularioPrincipalEmpresas());
+            Application.Run(login=new Login());
         }
     }
 }
