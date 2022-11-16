@@ -23,6 +23,7 @@ namespace InfoJobs.PresentationLayer
         private void FormularioPrincipalEmpresas_Load(object sender, EventArgs e)
         {
             ComboBoxOfici.DataSource = GestioSQL.DataBindingOficio();
+            dataGridViewOfertes.DataSource = GestioSQL.DataBindingOfertes();
         }
 
         private void FormularioPrincipalEmpresas_FormClosed(object sender, FormClosedEventArgs e)

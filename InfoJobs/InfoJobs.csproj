@@ -230,6 +230,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\InfoJobs.DataLayer.Ofertas.datasource" />
     <None Include="Properties\DataSources\InfoJobs.DataLayer.Oficio.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

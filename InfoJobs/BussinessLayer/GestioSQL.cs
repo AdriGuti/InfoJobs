@@ -66,6 +66,20 @@ namespace InfoJobs.BussinessLayer
             }
             return nomOficis;
         }
+        public static List<Ofertas> DataBindingOfertes()
+        {
+            List<Ofertas> ofertas = new List<Ofertas>();
+            try
+            {
+                connexio = new infojobsContext();
+                ofertas = connexio.Ofertas.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+            return ofertas;
+        }
         public static bool PublicarOferta(string titol, string descripcio, string ofici,string nifEmpresa)
         {
             bool ofertaPublicada = false;
