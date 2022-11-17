@@ -20,6 +20,7 @@ namespace InfoJobs.DataLayer
         }
 
         public virtual DbSet<Candidatos> Candidatos { get; set; }
+        public virtual DbSet<Datagridviewempresas> Datagridviewempresas { get; set; }
         public virtual DbSet<Empresas> Empresas { get; set; }
         public virtual DbSet<Ofertas> Ofertas { get; set; }
         public virtual DbSet<Oficio> Oficio { get; set; }
@@ -85,6 +86,35 @@ namespace InfoJobs.DataLayer
                     .HasConstraintName("CandidatoOficio");
             });
 
+            modelBuilder.Entity<Datagridviewempresas>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("datagridviewempresas");
+
+                entity.Property(e => e.Descripcion)
+                    .IsRequired()
+                    .HasColumnType("varchar(500)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Idoferta)
+                    .HasColumnName("IDOferta")
+                    .HasColumnType("int(3)");
+
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Titulo)
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+            });
+
             modelBuilder.Entity<Empresas>(entity =>
             {
                 entity.HasKey(e => e.Nif)
@@ -125,19 +155,19 @@ namespace InfoJobs.DataLayer
 
             modelBuilder.Entity<Ofertas>(entity =>
             {
-                entity.HasKey(e => e.IdOferta)
+                entity.HasKey(e => e.Idoferta)
                     .HasName("PRIMARY");
 
                 entity.ToTable("ofertas");
 
-                entity.HasIndex(e => e.IdOficio)
+                entity.HasIndex(e => e.Idoficio)
                     .HasName("ID Oficio");
 
                 entity.HasIndex(e => e.NifEmpresa)
                     .HasName("NIF Empresa");
 
-                entity.Property(e => e.IdOferta)
-                    .HasColumnName("ID Oferta")
+                entity.Property(e => e.Idoferta)
+                    .HasColumnName("IDOferta")
                     .HasColumnType("int(3)");
 
                 entity.Property(e => e.Descripcion)
@@ -146,8 +176,8 @@ namespace InfoJobs.DataLayer
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.IdOficio)
-                    .HasColumnName("ID Oficio")
+                entity.Property(e => e.Idoficio)
+                    .HasColumnName("IDOficio")
                     .HasColumnType("int(3)");
 
                 entity.Property(e => e.NifEmpresa)
@@ -163,9 +193,9 @@ namespace InfoJobs.DataLayer
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.HasOne(d => d.IdOficioNavigation)
+                entity.HasOne(d => d.IdoficioNavigation)
                     .WithMany(p => p.Ofertas)
-                    .HasForeignKey(d => d.IdOficio)
+                    .HasForeignKey(d => d.Idoficio)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("OfertaOficio");
 
@@ -178,13 +208,13 @@ namespace InfoJobs.DataLayer
 
             modelBuilder.Entity<Oficio>(entity =>
             {
-                entity.HasKey(e => e.IdOficio)
+                entity.HasKey(e => e.Idoficio)
                     .HasName("PRIMARY");
 
                 entity.ToTable("oficio");
 
-                entity.Property(e => e.IdOficio)
-                    .HasColumnName("ID Oficio")
+                entity.Property(e => e.Idoficio)
+                    .HasColumnName("IDOficio")
                     .HasColumnType("int(3)");
 
                 entity.Property(e => e.Descripcion)

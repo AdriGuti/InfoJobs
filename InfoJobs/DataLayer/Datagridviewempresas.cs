@@ -7,19 +7,11 @@ using System.Collections.Generic;
 
 namespace InfoJobs.DataLayer
 {
-    public partial class Oficio
+    public partial class Datagridviewempresas
     {
-        public Oficio()
-        {
-            Candidatos = new HashSet<Candidatos>();
-            Ofertas = new HashSet<Ofertas>();
-        }
-
-        public int Idoficio { get; set; }
+        public int Idoferta { get; set; }
+        public string Titulo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-
-        public virtual ICollection<Candidatos> Candidatos { get; set; }
-        public virtual ICollection<Ofertas> Ofertas { get; set; }
     }
 }

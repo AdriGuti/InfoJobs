@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InfoJobs.DataLayer;
+using Org.BouncyCastle.Tls;
 
 namespace InfoJobs.BussinessLayer
 {
@@ -54,7 +55,6 @@ namespace InfoJobs.BussinessLayer
             {
                 connexio = new infojobsContext();
                 oficis = connexio.Oficio.ToList();
-
                 foreach (Oficio ofici in oficis)
                 {
                     nomOficis.Add(ofici.Nombre);
@@ -66,19 +66,19 @@ namespace InfoJobs.BussinessLayer
             }
             return nomOficis;
         }
-        public static List<Ofertas> DataBindingOfertes()
+        public static List<Datagridviewempresas> DataBindingOfertes()
         {
-            List<Ofertas> ofertas = new List<Ofertas>();
+            List<Datagridviewempresas> ofertasEmpresa = new List<Datagridviewempresas>();
             try
             {
                 connexio = new infojobsContext();
-                ofertas = connexio.Ofertas.ToList();
+                ofertasEmpresa = connexio.Datagridviewempresas.ToList();
             }
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
             }
-            return ofertas;
+            return ofertasEmpresa;
         }
         public static bool PublicarOferta(string titol, string descripcio, string ofici,string nifEmpresa)
         {
@@ -89,7 +89,7 @@ namespace InfoJobs.BussinessLayer
                 Ofertas novaOferta = new Ofertas();
                 novaOferta.Titulo = titol;
                 novaOferta.Descripcion = descripcio;
-                novaOferta.IdOficio = connexio.Oficio.Where(a => a.Nombre == ofici).First<Oficio>().IdOficio;
+                novaOferta.Idoficio = connexio.Oficio.Where(a => a.Nombre == ofici).First<Oficio>().Idoficio;
                 novaOferta.NifEmpresa = nifEmpresa;
                 connexio.Ofertas.Add(novaOferta);
                 connexio.SaveChanges();

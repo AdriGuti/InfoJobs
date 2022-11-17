@@ -14,13 +14,13 @@ namespace InfoJobs.DataLayer
             Relacioncandidatosofertas = new HashSet<Relacioncandidatosofertas>();
         }
 
-        public int IdOferta { get; set; }
+        public int Idoferta { get; set; }
         public string Titulo { get; set; }
         public string NifEmpresa { get; set; }
-        public int IdOficio { get; set; }
+        public int Idoficio { get; set; }
         public string Descripcion { get; set; }
 
-        public virtual Oficio IdOficioNavigation { get; set; }
+        public virtual Oficio IdoficioNavigation { get; set; }
         public virtual Empresas NifEmpresaNavigation { get; set; }
         public virtual ICollection<Relacioncandidatosofertas> Relacioncandidatosofertas { get; set; }
     }

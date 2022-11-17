@@ -170,6 +170,7 @@
   <ItemGroup>
     <Compile Include="BussinessLayer\GestioSQL.cs" />
     <Compile Include="DataLayer\Candidatos.cs" />
+    <Compile Include="DataLayer\Datagridviewempresas.cs" />
     <Compile Include="DataLayer\Empresas.cs" />
     <Compile Include="DataLayer\infojobsContext.cs" />
     <Compile Include="DataLayer\Ofertas.cs" />
