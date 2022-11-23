@@ -1,2 +1,2 @@
 # InfoJobs
-Aquest es un projecte d'aplicatiu per vincula gent en recerca de feina amb empreses.
+Proyecto personal en desarollo. Aplicacion para Windows clon de aplicacion de busqueda de trabajo. Ej. InfoJobs
